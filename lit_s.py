@@ -137,10 +137,3 @@ def your_search_terms_beta(your_target_list, your_search_terms, output):
 
     if output == "count":
         return df
-
-    # write data out
-    if not os.path.exists("/home/jupyter-user/analysis/aortic_workshop/temp_output/" + term):
-        os.makedirs("/home/jupyter-user/analysis/aortic_workshop/temp_output/" + term)
-
-    df.write_csv("/home/jupyter-user/analysis/aortic_workshop/temp_output/" + term + "/temp.csv")
-    return df, res_d
