@@ -35,13 +35,13 @@ def fetch_details(id_list):
 def your_search_terms_beta(your_target_list, your_search_terms, output):
     """ get the pubmed count or titles associated with genes and your search term. You can choose between output as count for the number of hits or the abstracts to get back 
     For EXAMPLE: your_search_terms(your_target_list = ["ABC2", "ABC1"], 
-                                your_search_terms = ["fibrosis"], 
+                                your_search_terms = ["cancer"], 
                                 output = "count") """ 
     
     
     # formar and check input:
     if type(your_search_terms) != list:
-        return "please provide the search terms as a list e.g.: ['heart']"
+        return "please provide the search terms as a list e.g.: ['liver']"
     
     sleep_time = 1
     # sleep_time_long = 3
@@ -138,9 +138,5 @@ def your_search_terms_beta(your_target_list, your_search_terms, output):
     if output == "count":
         return df
 
-    # write data out
-    if not os.path.exists("/home/jupyter-user/analysis/aortic_workshop/temp_output/" + term):
-        os.makedirs("/home/jupyter-user/analysis/aortic_workshop/temp_output/" + term)
 
-    df.write_csv("/home/jupyter-user/analysis/aortic_workshop/temp_output/" + term + "/temp.csv")
     return df, res_d
